@@ -15,6 +15,7 @@ import { useLocation } from 'react-router-dom';
 import { useTranslation } from '../../common/components/LocalizationProvider';
 import { useAdministrator, useRestriction } from '../../common/util/permissions';
 import MenuItem from '../../common/components/MenuItem';
+import DashboardIcon from '@mui/icons-material/Dashboard';
 
 const ReportsMenu = () => {
   const t = useTranslation();
@@ -25,55 +26,62 @@ const ReportsMenu = () => {
 
   return (
     <>
-      <List>
-        <MenuItem
-          title={t('reportCombined')}
-          link="/reports/combined"
-          icon={<StarIcon />}
-          selected={location.pathname === '/reports/combined'}
-        />
-        <MenuItem
-          title={t('reportEvents')}
-          link="/reports/events"
-          icon={<NotificationsActiveIcon />}
-          selected={location.pathname === '/reports/events'}
-        />
-        <MenuItem
-          title={t('reportTrips')}
-          link="/reports/trips"
-          icon={<PlayCircleFilledIcon />}
-          selected={location.pathname === '/reports/trips'}
-        />
-        <MenuItem
-          title={t('reportStops')}
-          link="/reports/stops"
-          icon={<PauseCircleFilledIcon />}
-          selected={location.pathname === '/reports/stops'}
-        />
-        <MenuItem
-          title={t('reportSummary')}
-          link="/reports/summary"
-          icon={<FormatListBulletedIcon />}
-          selected={location.pathname === '/reports/summary'}
-        />
-        <MenuItem
-          title={t('reportChart')}
-          link="/reports/chart"
-          icon={<TrendingUpIcon />}
-          selected={location.pathname === '/reports/chart'}
-        />
-        <MenuItem
-          title={t('reportReplay')}
-          link="/replay"
-          icon={<RouteIcon />}
-        />
-        <MenuItem
-          title={t('reportPositions')}
-          link="/reports/route"
-          icon={<TimelineIcon />}
-          selected={location.pathname === '/reports/route'}
-        />
-      </List>
+     <List>
+  <MenuItem
+    title="داشبورد"
+    link="/reports/dashboard"
+    icon={<DashboardIcon />} // می‌تونی هر آیکونی که مناسب می‌دونی بذاری
+    selected={location.pathname === '/reports/dashboard'}
+  />
+  <MenuItem
+    title={t('reportCombined')}
+    link="/reports/combined"
+    icon={<StarIcon />}
+    selected={location.pathname === '/reports/combined'}
+  />
+  <MenuItem
+    title={t('reportEvents')}
+    link="/reports/events"
+    icon={<NotificationsActiveIcon />}
+    selected={location.pathname === '/reports/events'}
+  />
+  <MenuItem
+    title={t('reportTrips')}
+    link="/reports/trips"
+    icon={<PlayCircleFilledIcon />}
+    selected={location.pathname === '/reports/trips'}
+  />
+  <MenuItem
+    title={t('reportStops')}
+    link="/reports/stops"
+    icon={<PauseCircleFilledIcon />}
+    selected={location.pathname === '/reports/stops'}
+  />
+  <MenuItem
+    title={t('reportSummary')}
+    link="/reports/summary"
+    icon={<FormatListBulletedIcon />}
+    selected={location.pathname === '/reports/summary'}
+  />
+  <MenuItem
+    title={t('reportChart')}
+    link="/reports/chart"
+    icon={<TrendingUpIcon />}
+    selected={location.pathname === '/reports/chart'}
+  />
+  <MenuItem
+    title={t('reportReplay')}
+    link="/replay"
+    icon={<RouteIcon />}
+  />
+  <MenuItem
+    title={t('reportPositions')}
+    link="/reports/route"
+    icon={<TimelineIcon />}
+    selected={location.pathname === '/reports/route'}
+  />
+</List>
+
       <Divider />
       <List>
         <MenuItem

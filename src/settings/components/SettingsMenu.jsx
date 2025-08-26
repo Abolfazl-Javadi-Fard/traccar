@@ -161,6 +161,12 @@ const SettingsMenu = () => {
               icon={<PeopleIcon />}
               selected={location.pathname.startsWith('/settings/user') && location.pathname !== `/settings/user/${userId}`}
             />
+            <MenuItem
+              title={" راهنما "}
+              link="/settings/help"
+              icon={<HelpIcon />}
+              selected={location.pathname.startsWith('/settings/help')}
+            />
           </List>
         </>
       )}

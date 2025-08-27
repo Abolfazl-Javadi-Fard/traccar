@@ -64,10 +64,14 @@ import Loader from "./common/components/Loader";
 import { generateLoginToken } from "./common/components/NativeInterface";
 import { useLocalization } from "./common/components/LocalizationProvider";
 
+
 import useQuery from "./common/util/useQuery";
 import fetchOrThrow from "./common/util/fetchOrThrow";
 import { useEffectAsync } from "./reactHelper";
 import { devicesActions } from "./store";
+
+import DashboardPage from './reports/DashboardPage';
+
 
 const Navigation = () => {
   const navigate = useNavigate();
@@ -188,6 +192,7 @@ const Navigation = () => {
           <Route path="scheduled" element={<ScheduledPage />} />
           <Route path="audit" element={<AuditPage />} />
           <Route path="logs" element={<LogsPage />} />
+            <Route path="dashboard" element={<DashboardPage />} />
         </Route>
       </Route>
     </Routes>
